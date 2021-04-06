@@ -1,0 +1,21 @@
+<div class="title_blog">
+  <h2>Mes Blogs</h2>
+
+</div>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Content</th>
+  </tr>
+<% @blogs.each do |blog| %>
+  <tr>
+    <td><%= blog.title %></td>
+    <td><%= blog.content %></td>
+    <td><%= link_to 'Check the details', blog_path(blog.id) %></td>
+    <td><%= link_to "Edit blog", edit_blog_path(blog.id) %></td>
+  </tr>
+
+<% end %>
+</table>
+<br>
+<%= link_to 'Post a new blog',new_blog_path %>
